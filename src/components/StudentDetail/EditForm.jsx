@@ -47,6 +47,7 @@ function EditForm(props) {
         />
         <input type='submit' value='Update Student' />
       </form>
+      {JSON.stringify(editStudent)}
     </>
   );
 }

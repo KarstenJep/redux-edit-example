@@ -21,7 +21,16 @@ const studentList = (state = [], action) => {
 
 // hold only the single student object being edited
 const editStudent = (state  = {}, action) => {
-
+    if(action.type === 'SET_EDIT_STUDENT') {
+        return action.payload;
+    } else if (action.type === 'EDIT_CHANGE'){
+        return {
+            ...state,
+            // This sets a particular property in the object
+            // the [] around the property name lets us use a variable
+            [action.payload.property]: action.payload.value
+        }
+    }
     return state;
 }
 
